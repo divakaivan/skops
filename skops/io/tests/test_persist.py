@@ -248,6 +248,7 @@ def _tested_estimators(type_filter=None):
     )
 
     dictionary = np.random.randint(-2, 3, size=(5, N_FEATURES)).astype(float)
+    print(f"dictionary shape: {dictionary.shape}")
     yield SparseCoder(
         dictionary=dictionary,
         transform_algorithm="lasso_lars",
