@@ -70,8 +70,11 @@ doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
 filterwarnings = [
     "error::DeprecationWarning",
     "error::FutureWarning",
+    "ignore:Class PassiveAggressiveClassifier is deprecated; this is deprecated in version 1.8 and will be removed in 1.10.:FutureWarning
+    # FutureWarning: Class PassiveAggressiveClassifier is deprecated; this is deprecated in version 1.8 and will be removed in 1.10. Use `SGDClassifier(loss='hinge', penalty=None, learning_rate='pa1', eta0=1.0)` instead.
     # comes from fairlearn
-    # "ignore:DataFrameGroupBy.apply operated on the grouping columns.:DeprecationWarning",
+    "ignore:DataFrameGroupBy.apply operated on the grouping columns.:DeprecationWarning",
+    # DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
 ]
 addopts = "--cov=skops --cov-report=term-missing --doctest-modules"
 
