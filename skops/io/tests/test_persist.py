@@ -140,6 +140,11 @@ def _tested_estimators(type_filter=None):
                     category=SkipTestWarning,
                     message="Can't instantiate estimator",
                 )
+                warnings.filterwarnings(
+                    "ignore",
+                    category=FutureWarning,
+                    message=".*PassiveAggressiveClassifier is deprecated.*",
+                )
                 if name == "QuantileRegressor" and sp_version >= parse_version(
                     "1.11.0"
                 ):
@@ -279,6 +284,11 @@ def _unsupported_estimators(type_filter=None):
                     "ignore",
                     category=SkipTestWarning,
                     message="Can't instantiate estimator",
+                )
+                warnings.filterwarnings(
+                    "ignore",
+                    category=FutureWarning,
+                    message=".*PassiveAggressiveClassifier is deprecated.*",
                 )
                 # Get the first instance directly from the generator
                 estimators = construct_instances(Estimator)
