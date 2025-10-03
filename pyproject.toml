@@ -72,6 +72,7 @@ filterwarnings = [
     "error::FutureWarning",
     # sklearn1.8 deprecates this class
     "ignore:Class PassiveAggressiveClassifier is deprecated:FutureWarning",
+    "ignore:Class PassiveAggressiveRegressor is deprecated:FutureWarning",
     # comes from fairlearn
     "ignore:DataFrameGroupBy.apply operated on the grouping columns.:DeprecationWarning",
 ]
