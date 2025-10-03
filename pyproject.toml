@@ -68,10 +68,10 @@ select = ["E", "F", "W", "I"]
 [tool.pytest.ini_options]
 doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
 filterwarnings = [
-    # "ignore:Class PassiveAggressiveClassifier.*:FutureWarning",
     "error::DeprecationWarning",
-    # "error::FutureWarning",
+    "error::FutureWarning",
     # FutureWarning: Class PassiveAggressiveClassifier is deprecated; this is deprecated in version 1.8 and will be removed in 1.10. Use `SGDClassifier(loss='hinge', penalty=None, learning_rate='pa1', eta0=1.0)` instead.
+    "default:Class PassiveAggressiveClassifier is deprecated:FutureWarning",
     # comes from fairlearn
     "ignore:DataFrameGroupBy.apply operated on the grouping columns.:DeprecationWarning",
     # DeprecationWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
