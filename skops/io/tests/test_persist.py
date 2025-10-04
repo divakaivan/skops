@@ -393,11 +393,6 @@ def test_can_persist_fitted(estimator):
     if get_tags(estimator).requires_fit:
         with warnings.catch_warnings():
             warnings.filterwarnings("ignore", module="sklearn")
-            print(f"Estimator: {estimator}'s X shape {len(X)}")
-            try:
-                print(f"dictionary shape is {estimator.dictionary.shape}")
-            except:
-                pass
             if y is not None:
                 estimator.fit(X, y)
             else:
