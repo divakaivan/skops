@@ -149,7 +149,9 @@ def _tested_estimators(type_filter=None):
                     # https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.QuantileRegressor.html
                     estimators = construct_instances(partial(Estimator, solver="highs"))
                 elif name == "SparseCoder":
-                    dictionary = np.random.randint(-2, 3, size=(5, N_FEATURES)).astype(float)
+                    dictionary = np.random.randint(-2, 3, size=(5, N_FEATURES)).astype(
+                        float
+                    )
                     estimators = [
                         SparseCoder(
                             dictionary=dictionary,
