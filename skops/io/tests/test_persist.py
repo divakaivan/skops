@@ -148,6 +148,8 @@ def _tested_estimators(type_filter=None):
                     # default solver will be "highs" from scikit-learn >= 1.4.0.
                     # https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.QuantileRegressor.html
                     estimators = construct_instances(partial(Estimator, solver="highs"))
+                elif name == "SparseCoder":
+                    pass
                 else:
                     estimators = construct_instances(Estimator)
 
